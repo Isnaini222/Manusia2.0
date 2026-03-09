@@ -1050,6 +1050,125 @@ h4.prose-h2 {
   .toc-overlay { padding: 80px 24px 40px; }
   .pullquote { font-size: 1.4rem; padding: 40px 0; }
   .ch-title { font-size: 2.4rem; }
+  .cover-collab { padding: 0 4px; }
+  .collab-names { gap: 10px; flex-wrap: wrap; justify-content: center; }
+}
+
+/* ═══════════════════════════════════════
+   COLLAB CREDIT — COVER
+═══════════════════════════════════════ */
+.cover-collab {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: fadeUp .8s .7s ease both;
+}
+
+.collab-bar {
+  width: 100%;
+  max-width: 320px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim) 30%, rgba(200,146,42,.25) 50%, var(--gold-dim) 70%, transparent);
+}
+
+.collab-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.collab-label {
+  font-family: var(--mono);
+  font-size: .58rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.collab-names {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.collab-human {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  letter-spacing: .04em;
+}
+
+.collab-x {
+  font-family: var(--mono);
+  font-size: .75rem;
+  color: var(--text-muted);
+  opacity: .6;
+}
+
+.collab-ai {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cream-soft);
+  letter-spacing: .02em;
+}
+
+.collab-note {
+  font-family: var(--mono);
+  font-size: .63rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 380px;
+  text-align: center;
+  letter-spacing: .01em;
+}
+
+/* ═══════════════════════════════════════
+   COLLAB CREDIT — FOOTER
+═══════════════════════════════════════ */
+.footer-collab {
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 18px 28px;
+  border: 1px solid var(--border-hi);
+  max-width: 340px;
+}
+
+.footer-collab-label {
+  font-family: var(--mono);
+  font-size: .55rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.footer-collab-names {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--gold-bright);
+  letter-spacing: .03em;
+}
+
+.footer-collab-names strong {
+  font-weight: 700;
+}
+
+.footer-collab-sub {
+  font-family: var(--mono);
+  font-size: .58rem;
+  color: var(--text-muted);
+  letter-spacing: .1em;
+  margin-top: 2px;
 }
 </style>
 </head>
@@ -1059,7 +1178,7 @@ h4.prose-h2 {
 
 <!-- ═══ TOP NAV ═══ -->
 <nav id="topnav">
-  <span class="nav-brand">Signal ◆ 2025</span>
+  <span class="nav-brand">Signal ◆ 2026</span>
   <div class="nav-actions">
     <span class="nav-progress-text" id="progress-pct">0%</span>
     <button class="nav-toc-btn" onclick="toggleTOC()">Daftar Isi ☰</button>
@@ -1107,7 +1226,7 @@ h4.prose-h2 {
 <section id="cover">
   <div class="cover-signal" aria-hidden="true">SIGNAL</div>
   <div class="cover-inner">
-    <div class="cover-meta">Buku Digital Edisi 2025</div>
+    <div class="cover-meta">Buku Digital Edisi 2026</div>
     <div class="cover-title-wrap">
       <h1 class="cover-title">
         <em>Signal</em>
@@ -1129,6 +1248,23 @@ h4.prose-h2 {
       <a href="#prolog" class="btn-primary">Mulai Membaca →</a>
       <button class="btn-ghost" onclick="toggleTOC()">Lihat Isi Buku</button>
     </div>
+
+    <div class="cover-collab">
+      <div class="collab-bar"></div>
+      <div class="collab-inner">
+        <span class="collab-label">Kolaborasi</span>
+        <div class="collab-names">
+          <span class="collab-human">munnnn666</span>
+          <span class="collab-x">×</span>
+          <span class="collab-ai">Kecerdasan Buatan</span>
+        </div>
+        <p class="collab-note">
+          Visi satu jiwa, kemampuan satu model. Sebuah karya yang lahir dari percakapan antara manusia dan mesin — tidak bisa dibuat oleh salah satunya sendirian.
+        </p>
+      </div>
+      <div class="collab-bar"></div>
+    </div>
+
   </div>
   <div class="cover-scroll-hint">
     <div class="scroll-line"></div>
@@ -2029,10 +2165,14 @@ h4.prose-h2 {
 
     <div class="epilogue-footer">
       <div class="ch-sep"><span>◆ ◆ ◆</span></div>
-      <p>SIGNAL: Panduan Bertahan & Berkembang di Era yang Berubah</p>
-      <p>Edisi Digital Pertama · 2025</p>
-      <p style="margin-top:16px">Hak cipta dilindungi. Distribusi tanpa izin tertulis dilarang.</p>
-      <p>Untuk pertanyaan, perizinan, dan pembelian lisensi korporat:<br>hubungi penerbit melalui saluran resmi.</p>
+      <p>SIGNAL: Panduan Bertahan &amp; Berkembang di Era yang Berubah</p>
+      <p>Edisi Digital 2026 — Revisi &amp; Diperluas</p>
+      <div class="footer-collab">
+        <span class="footer-collab-label">Kolaborasi</span>
+        <span class="footer-collab-names"><strong>munnnn666</strong> × Kecerdasan Buatan</span>
+        <span class="footer-collab-sub">Visi manusia · Kemampuan mesin · Satu karya</span>
+      </div>
+      <p style="margin-top:20px; opacity:.5;">Hak cipta dilindungi. Distribusi tanpa izin tertulis dilarang.</p>
     </div>
   </div>
 </section>
